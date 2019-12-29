@@ -117,6 +117,7 @@ func (rh loggerHanlder) write(rl *responseLogger, req *http.Request) {
 	switch rh.formatType {
 	case CombineLoggerType:
 		fmt.Fprintln(rh.writer, strings.Join([]string{
+			req.Host,
 			req.RemoteAddr,
 			"-",
 			username,
